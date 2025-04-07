@@ -1,5 +1,7 @@
 package models.interfaces;
 
+import java.util.Comparator;
+
 /**
  * A list interface for sequenced storage of elements.
  * @param <T> the element's type that is being stored
@@ -75,7 +77,7 @@ public interface MyList<T> extends Iterable<T> {
     /**
      * Sorts the sequence.
      */
-    void sort();
+    void sort(Comparator<T> cmp);
 
     /**
      * Returns the index of the specified object.

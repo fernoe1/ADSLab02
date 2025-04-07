@@ -142,7 +142,8 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * Sorts the array list using comparator passed as a parameter.
+     * Sorts the array list using comparator passed as a parameter. <br>
+     * O(n^2) time complexity.
      */
     @Override
     public void sort(Comparator<T> cmp) {
@@ -188,12 +189,18 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * Returns the array list as a primitive array.
+     * Returns the array list as a primitive array by creating new primitive array
+     * and copying the elements into it.
      * @return the primitive array
      */
     @Override
     public Object[] toArray() {
-        return elements;
+        Object[] array = new Object[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = elements[i];
+        }
+
+        return array;
     }
 
     /**
@@ -239,7 +246,8 @@ public class MyArrayList<T> implements MyList<T> {
     /**
      * Private method that creates a new array with double of the original size,
      * copies elements from the original and changes
-     * the reference to the new array resulting in an array with larger size.
+     * the reference to the new array resulting in an array with larger size. <br>
+     * O(n) time complexity.
      */
     private void increaseSize() {
         T[] temp = (T[]) new Object[elements.length * 2];
@@ -260,7 +268,8 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * Private method that shifts elements to the left.
+     * Private method that shifts elements to the left. <br>
+     * O(n) time complexity.
      * @param index the element to start the shift from
      */
     private void shiftLeft(int index) {
@@ -270,7 +279,8 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * Private method that shifts elements to the right.
+     * Private method that shifts elements to the right. <br>
+     * O(n) time complexity.
      * @param index the element to shift till
      */
     private void shiftRight(int index) {
@@ -280,7 +290,8 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * Finds the index of the specified element.
+     * Finds the index of the specified element. <br>
+     * O(n) time complexity.
      * @param element the element to find the index of
      * @return the index of the specified element, -1 if not found
      */
@@ -296,7 +307,8 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * Finds the last occurrence of the specified element.
+     * Finds the last occurrence of the specified element. <br>
+     * O(n) time complexity.
      * @param element the element to find the last occurrence of
      * @return the index of last occurrence
      */
@@ -312,7 +324,8 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * Returns true if the array list contains a specified element, false if not.
+     * Returns true if the array list contains a specified element, false if not. <br>
+     * O(n) time complexity.
      * @param element the element to search
      * @return true or false
      */

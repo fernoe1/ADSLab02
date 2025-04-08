@@ -21,6 +21,7 @@ public class MyMinHeapTest {
         minHeap.insert(15);
         minHeap.insert(12);
         System.out.println("Added 20, 15, and 12 to the heap");
+        System.out.println("Heap size: " + minHeap.size());
         System.out.println("The min root element: " + minHeap.getExtremum());
 
         // testing extract
@@ -29,7 +30,7 @@ public class MyMinHeapTest {
         System.out.println("New min root element: " + minHeap.getExtremum());
 
         // testing size
-        System.out.println("Heap size: " + minHeap.size());
+        System.out.println("New heap size: " + minHeap.size());
 
         // testing empty
         System.out.println("Heap is empty? " + minHeap.empty());

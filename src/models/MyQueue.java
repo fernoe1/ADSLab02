@@ -1,12 +1,13 @@
 package models;
 
 import models.interfaces.IMyQueue;
+import models.interfaces.MyList;
 
 public class MyQueue<T> implements IMyQueue<T> {
-    private MyLinkedList<T> myLinkedList;
+    private MyList<T> list;
 
-    public MyQueue() {
-        myLinkedList = new MyLinkedList<>();
+    public MyQueue(MyList<T> list) {
+        this.list = list;
     }
 
     /**
@@ -15,7 +16,7 @@ public class MyQueue<T> implements IMyQueue<T> {
      */
     @Override
     public boolean empty() {
-        return myLinkedList.size() == 0;
+        return list.size() == 0;
     }
 
     /**
@@ -24,7 +25,7 @@ public class MyQueue<T> implements IMyQueue<T> {
      */
     @Override
     public int size() {
-        return myLinkedList.size();
+        return list.size();
     }
 
     /**
@@ -33,7 +34,7 @@ public class MyQueue<T> implements IMyQueue<T> {
      */
     @Override
     public T peek() {
-        return myLinkedList.getFirst();
+        return list.getFirst();
     }
 
     /**
@@ -43,7 +44,7 @@ public class MyQueue<T> implements IMyQueue<T> {
      */
     @Override
     public T enqueue(T element) {
-        myLinkedList.addLast(element);
+        list.addLast(element);
         return element;
     }
 
@@ -53,8 +54,8 @@ public class MyQueue<T> implements IMyQueue<T> {
      */
     @Override
     public T dequeue() {
-        T temp = myLinkedList.getFirst();
-        myLinkedList.removeFirst();
+        T temp = list.getFirst();
+        list.removeFirst();
         return temp;
     }
 }

@@ -1,12 +1,13 @@
 package models;
 
 import models.interfaces.IMyStack;
+import models.interfaces.MyList;
 
 public class MyStack<T> implements IMyStack<T> {
-    private MyArrayList<T> myArrayList;
+    private MyList<T> list;
 
-    public MyStack() {
-        myArrayList = new MyArrayList<>();
+    public MyStack(MyList<T> list) {
+        this.list = list;
     }
 
     /**
@@ -15,7 +16,7 @@ public class MyStack<T> implements IMyStack<T> {
      */
     @Override
     public boolean empty() {
-        return myArrayList.size() == 0;
+        return list.size() == 0;
     }
 
     /**
@@ -24,7 +25,7 @@ public class MyStack<T> implements IMyStack<T> {
      */
     @Override
     public int size() {
-        return myArrayList.size();
+        return list.size();
     }
 
     /**
@@ -33,7 +34,7 @@ public class MyStack<T> implements IMyStack<T> {
      */
     @Override
     public T peek() {
-        return myArrayList.getLast();
+        return list.getLast();
     }
 
     /**
@@ -43,7 +44,7 @@ public class MyStack<T> implements IMyStack<T> {
      */
     @Override
     public T push(T element) {
-        myArrayList.add(element);
+        list.add(element);
         return element;
     }
 
@@ -53,8 +54,8 @@ public class MyStack<T> implements IMyStack<T> {
      */
     @Override
     public T pop() {
-        T temp = myArrayList.getLast();
-        myArrayList.removeLast();
+        T temp = list.getLast();
+        list.removeLast();
         return temp;
     }
 }

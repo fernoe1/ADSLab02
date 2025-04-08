@@ -11,7 +11,7 @@ public class MyStack<T> implements IMyStack<T> {
     }
 
     /**
-     * Returns true or false depending if the stack is empty or not through inner method size().
+     * Returns true or false depending on if the stack is empty or not through inner method size().
      * @return true or false
      */
     @Override

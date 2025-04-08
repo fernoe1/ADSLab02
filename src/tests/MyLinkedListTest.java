@@ -4,9 +4,11 @@ import models.MyLinkedList;
 
 import java.util.Comparator;
 
+/**
+ * Default test for MyLinkedList.
+ */
 public class MyLinkedListTest {
-    public static void main(String[] args) {
-        // testing my linked list methods
+    public static void startTest() {
         MyLinkedList<Integer> linked = new MyLinkedList<>();
         System.out.println();
         System.out.println("---------------------------------------------");

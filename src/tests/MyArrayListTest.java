@@ -4,10 +4,12 @@ import models.MyArrayList;
 
 import java.util.Comparator;
 
+/**
+ * Default test for MyArrayList.
+ */
 public class MyArrayListTest {
-    public static void main(String[] args) {
+    public static void startTest() {
         MyArrayList<Integer> integers = new MyArrayList<>();
-        // testing my array list methods
         System.out.println("---------------------------------------------");
         System.out.println("My Array List");
         System.out.println("---------------------------------------------");
